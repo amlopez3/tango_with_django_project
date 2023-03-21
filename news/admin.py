@@ -1,3 +1,8 @@
 from django.contrib import admin
+from news.models import New
 
-# Register your models here.
+class NewAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'date', 'text')
+
+admin.site.register(New, NewAdmin)
+
