@@ -9,6 +9,19 @@
 
     <body>
         <h1>School News</h1>
+        <br>
+        <br>
+        {% if news %}
+            {% for new in news %}
+                <h1>{{ new.title }}</h1>
+                <p><i>by {{ new.author }}. {{ new.date }}</i></p>
+                <p>{{ new.text }}</p>
+                <br>
+            {% endfor %}
+        {% else %}
+            <strong>There are no news present.</strong>
+        {% endif %}
+        </div>
     </body>
 
 </html>
