@@ -7,14 +7,14 @@
         <title>News</title>
     </head>
 
-    <body>
-        <h1>School News</h1>
+    <body style="background-color: yellow">
+        <h1 style="text-align: center">School News</h1>
         <br>
         <br>
         {% if news %}
             {% for new in news %}
                 <h1>{{ new.title }}</h1>
-                <p><i>by {{ new.author }}. {{ new.date }}</i></p>
+                <p><i>by {{ new.author }}. {{ new.date|date:'d/m/Y' }}</i></p>
                 <p>{{ new.text }}</p>
                 <br>
             {% endfor %}
